@@ -7,19 +7,49 @@
 //
 
 import UIKit
+import Speech
+import AVKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var recordButton: UIButton!
+    
+    var audioPlayer: AVAudioPlayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func requestSpeechAuthorization() {
+        SFSpeechRecognizer.requestAuthorization { authenticationStatus in
+            if authenticationStatus == SFSpeechRecognizerAuthorizationStatus.authorized {
+                let audioUrl  = Bundle.main.url(forResource: "audio", withExtension: "m4a")!
+                do {
+                    let sound = try! AVAudioPlayer(contentsOf: audioUrl)
+                    self.audioPlayer = sound
+                    sound.play()
+                } catch {
+                    print("Error")
+                }
+                
+                let recognizer = SFSpeechRecognizer()
+                let request = SFSpeechURLRecognitionRequest(url: audioUrl)
+                recognizer?.recognitionTask(with: request, resultHandler: { (result, error) in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        print(result?.bestTranscription.formattedString)
+                    }
+                })
+            }
+        }
     }
-
-
+    
+    @IBAction func test() {
+        requestSpeechAuthorization()
+    }
+    
+    
 }
 
