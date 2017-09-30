@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     
     var audioPlayer: AVAudioPlayer!
+    let audioRecorder = AudioRecorder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,9 @@ class ViewController: UIViewController {
     func requestSpeechAuthorization() {
         SFSpeechRecognizer.requestAuthorization { authenticationStatus in
             if authenticationStatus == SFSpeechRecognizerAuthorizationStatus.authorized {
-                let audioUrl  = Bundle.main.url(forResource: "audio", withExtension: "m4a")!
+              let recordUrl =  self.audioRecorder.startRecord(file: "audio")
                 do {
-                    let sound = try! AVAudioPlayer(contentsOf: audioUrl)
+                    let sound = try! AVAudioPlayer(contentsOf: recordUrl)
                     self.audioPlayer = sound
                     sound.play()
                 } catch {
@@ -34,7 +35,7 @@ class ViewController: UIViewController {
                 }
                 
                 let recognizer = SFSpeechRecognizer()
-                let request = SFSpeechURLRecognitionRequest(url: audioUrl)
+                let request = SFSpeechURLRecognitionRequest(url: recordUrl)
                 recognizer?.recognitionTask(with: request, resultHandler: { (result, error) in
                     if let error = error {
                         print(error)

@@ -13,6 +13,7 @@
 		5B40C1FF1F7DA41B00CD7234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B40C1FE1F7DA41B00CD7234 /* Assets.xcassets */; };
 		5B40C2021F7DA41B00CD7234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B40C2001F7DA41B00CD7234 /* LaunchScreen.storyboard */; };
 		5B40C20B1F7DAC5F00CD7234 /* UICircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40C20A1F7DAC5F00CD7234 /* UICircleButton.swift */; };
+		5BCB332C1F7FD697007FF7F0 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCB332B1F7FD697007FF7F0 /* AudioRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +25,7 @@
 		5B40C2011F7DA41B00CD7234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B40C2031F7DA41B00CD7234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B40C20A1F7DAC5F00CD7234 /* UICircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICircleButton.swift; sourceTree = "<group>"; };
-		5B40C20C1F7DC49D00CD7234 /* audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = audio.m4a; sourceTree = "<group>"; };
+		5BCB332B1F7FD697007FF7F0 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +58,12 @@
 		5B40C1F61F7DA41B00CD7234 /* iOSSpeechRecognitionExample */ = {
 			isa = PBXGroup;
 			children = (
-				5B40C20C1F7DC49D00CD7234 /* audio.m4a */,
-				5B40C2091F7DAC3900CD7234 /* View */,
 				5B40C1F71F7DA41B00CD7234 /* AppDelegate.swift */,
-				5B40C1F91F7DA41B00CD7234 /* ViewController.swift */,
-				5B40C1FB1F7DA41B00CD7234 /* Main.storyboard */,
-				5B40C2001F7DA41B00CD7234 /* LaunchScreen.storyboard */,
+				5BCB33281F7FD641007FF7F0 /* UI */,
+				5BCB33291F7FD654007FF7F0 /* Storyboard */,
 				5B40C1FE1F7DA41B00CD7234 /* Assets.xcassets */,
 				5B40C2031F7DA41B00CD7234 /* Info.plist */,
+				5BCB332B1F7FD697007FF7F0 /* AudioRecorder.swift */,
 			);
 			path = iOSSpeechRecognitionExample;
 			sourceTree = "<group>";
@@ -75,6 +74,24 @@
 				5B40C20A1F7DAC5F00CD7234 /* UICircleButton.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5BCB33281F7FD641007FF7F0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5B40C1F91F7DA41B00CD7234 /* ViewController.swift */,
+				5B40C2091F7DAC3900CD7234 /* View */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5BCB33291F7FD654007FF7F0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5B40C2001F7DA41B00CD7234 /* LaunchScreen.storyboard */,
+				5B40C1FB1F7DA41B00CD7234 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +168,7 @@
 			files = (
 				5B40C1FA1F7DA41B00CD7234 /* ViewController.swift in Sources */,
 				5B40C1F81F7DA41B00CD7234 /* AppDelegate.swift in Sources */,
+				5BCB332C1F7FD697007FF7F0 /* AudioRecorder.swift in Sources */,
 				5B40C20B1F7DAC5F00CD7234 /* UICircleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
