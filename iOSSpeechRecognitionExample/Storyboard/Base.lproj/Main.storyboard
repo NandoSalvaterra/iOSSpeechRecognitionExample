@@ -61,6 +61,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Speech Recognition" id="oL1-23-crc"/>
+                    <connections>
+                        <outlet property="recordButton" destination="sY2-qt-K0K" id="Whx-Pa-pEo"/>
+                        <outlet property="speechTextView" destination="LI4-4r-giW" id="tqV-Za-LG8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -25,7 +25,9 @@ class AudioRecorder: NSObject, AVAudioRecorderDelegate {
         do {
            try audioSession.setActive(true)
             try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-        } catch {}
+        } catch let error as NSError{
+           print(error.localizedDescription)
+        }
         
         var path = NSTemporaryDirectory() + "/" + file
         
