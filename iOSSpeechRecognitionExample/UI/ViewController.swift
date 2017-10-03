@@ -12,7 +12,7 @@ import AVKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var recordButton: UICircleButton!
     @IBOutlet weak var speechTextView: UITextView!
     
     var audioPlayer = AudioPlayer()
@@ -46,10 +46,12 @@ class ViewController: UIViewController {
     @IBAction func record() {
         if isRecording {
             isRecording = false
+            recordButton.setImage(#imageLiteral(resourceName: "icon_microfone"), for: .normal)
             audioRecorder.stopRecord()
             requestSpeechAuthorization(for: recordUrl)
         } else {
             isRecording = true
+            recordButton.setImage(#imageLiteral(resourceName: "icon_play"), for: .normal)
             recordUrl =  self.audioRecorder.startRecord(file: "audio.caf")
         }
     }
