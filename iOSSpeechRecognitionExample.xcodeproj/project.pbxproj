@@ -41,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B0E90B91F83115B001F3A23 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				5BCB332B1F7FD697007FF7F0 /* AudioRecorder.swift */,
+				5BB697E21F81A93C001F86D3 /* AudioPlayer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		5B40C1EB1F7DA41B00CD7234 = {
 			isa = PBXGroup;
 			children = (
@@ -63,10 +72,9 @@
 				5B40C1F71F7DA41B00CD7234 /* AppDelegate.swift */,
 				5BCB33281F7FD641007FF7F0 /* UI */,
 				5BCB33291F7FD654007FF7F0 /* Storyboard */,
+				5B0E90B91F83115B001F3A23 /* Audio */,
 				5B40C1FE1F7DA41B00CD7234 /* Assets.xcassets */,
 				5B40C2031F7DA41B00CD7234 /* Info.plist */,
-				5BCB332B1F7FD697007FF7F0 /* AudioRecorder.swift */,
-				5BB697E21F81A93C001F86D3 /* AudioPlayer.swift */,
 			);
 			path = iOSSpeechRecognitionExample;
 			sourceTree = "<group>";

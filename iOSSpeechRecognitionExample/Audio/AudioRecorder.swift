@@ -22,34 +22,22 @@ class AudioRecorder: NSObject, AVAudioRecorderDelegate {
     func startRecord(file: String) -> URL {
         audioSession = AVAudioSession.sharedInstance()
         
-        do {
-           try audioSession.setActive(true)
-            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-        } catch let error as NSError{
-           print(error.localizedDescription)
-        }
+        try! audioSession.setActive(true)
+        try! audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
         
-        var path = NSTemporaryDirectory() + "/" + file
-        
+        let path = NSTemporaryDirectory() + "/" + file
         let url = URL(fileURLWithPath: path)
-       
-        do {
-       try audioRecorder = AVAudioRecorder(url: url, settings: recordSettings)
-            
-        } catch {}
-        audioRecorder.delegate = self
+        try! audioRecorder = AVAudioRecorder(url: url, settings: recordSettings)
         
+        audioRecorder.delegate = self
         audioRecorder.prepareToRecord()
         audioRecorder.record()
         return url
-        
     }
-    
     
     func stopRecord() {
         audioRecorder.stop()
-        
-       try! audioSession.setActive(false)
+        try! audioSession.setActive(false)
     }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {

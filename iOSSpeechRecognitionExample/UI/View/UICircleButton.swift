@@ -11,15 +11,17 @@ import UIKit
 @IBDesignable
 class UICircleButton: UIButton {
     
-    @IBInspectable var cornerRadius: CGFloat = 0.0
-    
+    @IBInspectable var borderColor: UIColor = UIColor.clear
     
     override func prepareForInterfaceBuilder() {
-        self.layer.cornerRadius = cornerRadius
+        self.layer.cornerRadius = self.layer.bounds.width / 2
+        self.layer.borderColor = borderColor.cgColor
+        self.layer.borderWidth = 2.0
     }
     
     override func layoutSubviews() {
-        self.layer.cornerRadius = cornerRadius
+        self.layer.cornerRadius = self.layer.bounds.width / 2
+        self.layer.borderColor = borderColor.cgColor
+        self.layer.borderWidth = 2.0
     }
-    
 }

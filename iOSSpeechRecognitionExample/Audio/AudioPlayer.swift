@@ -14,9 +14,7 @@ class AudioPlayer: NSObject, AVAudioPlayerDelegate {
     var player: AVAudioPlayer!
     
     func playAudio(with url: URL) {
-        
         if player == nil {
-            
             player  = try! AVAudioPlayer(contentsOf: url)
             player.delegate = self
             player.play()

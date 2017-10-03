@@ -24,7 +24,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    
     func requestSpeechAuthorization(for url: URL) {
         SFSpeechRecognizer.requestAuthorization { authenticationStatus in
             if authenticationStatus == SFSpeechRecognizerAuthorizationStatus.authorized {
@@ -37,24 +36,21 @@ class ViewController: UIViewController {
                     if let error = error {
                         print(error)
                     } else {
-                       self.speechTextView.text = result?.bestTranscription.formattedString
+                        self.speechTextView.text = result?.bestTranscription.formattedString
                     }
                 })
             }
         }
     }
     
-    
-    @IBAction func test() {
+    @IBAction func record() {
         if isRecording {
             isRecording = false
             audioRecorder.stopRecord()
             requestSpeechAuthorization(for: recordUrl)
-            
         } else {
             isRecording = true
             recordUrl =  self.audioRecorder.startRecord(file: "audio.caf")
         }
-        
     }
 }
