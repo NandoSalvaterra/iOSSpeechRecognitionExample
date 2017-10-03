@@ -22,13 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY2-qt-K0K" customClass="UICircleButton" customModule="iOSSpeechRecognitionExample" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY2-qt-K0K" customClass="UICircleButton" customModule="iOSSpeechRecognitionExample" customModuleProvider="target">
                                 <rect key="frame" x="157.66666666666666" y="698" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="7RJ-Gv-jb5"/>
                                     <constraint firstAttribute="height" constant="60" id="kh3-Y9-qPA"/>
                                 </constraints>
-                                <state key="normal">
+                                <color key="tintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="microfone_icon">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -70,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="132.68365817091455"/>
+            <point key="canvasLocation" x="476" y="132.26600985221674"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2PN-cf-ILO">
@@ -95,4 +96,7 @@
             <point key="canvasLocation" x="-241" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="microfone_icon" width="36" height="57"/>
+    </resources>
 </document>
