@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func record() {
+        // search about SFSpeechAudioBufferRecognitionRequest
         if isRecording {
             isRecording = false
             recordButton.setImage(#imageLiteral(resourceName: "icon_microfone"), for: .normal)
